@@ -131,9 +131,10 @@ def get_list_todos(list_id):
   
 )
 
-@app.route('/lists/creste', methods=['POST'])
+@app.route('/lists/create', methods=['POST'])
 def create_list():
-    error=Falsebody={}
+    error=False
+    body={}
     try:
         name=request.get_json()['name']
         todolist=TodoList(name=name)
